@@ -1,13 +1,23 @@
 # Apache Tomcat (apache-tomcat)
-Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages (JSP), Java Expression Language, and Java WebSocket technologies. It is one of the most widely deployed Java application servers, hosting Java web applications and REST API backends.
 
-**URL:** [https://tomcat.apache.org/](https://tomcat.apache.org/)
+Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages (JSP), Java Expression Language, and Java WebSocket technologies. It provides a pure Java HTTP web server and servlet container for hosting Java web applications. Tomcat exposes management APIs via the Manager application (HTTP text protocol), JMX for monitoring, and a Virtual Host Manager for configuration management. It is maintained by the Apache Software Foundation and is one of the most widely deployed Java application servers.
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-tomcat/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-tomcat/refs/heads/main/apis.yml)
 
-## Tags:
+## Scope
 
- - Application Server, Java, JSP, Open Source, Servlet, Web Server
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
+
+## Tags
+
+- Application Server
+- Java
+- JSP
+- Open Source
+- Servlet
+- Web Server
 
 ## Timestamps
 
@@ -17,74 +27,57 @@ Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer P
 ## APIs
 
 ### Apache Tomcat Manager API
-HTTP text protocol API for deploying, undeploying, starting, stopping, and reloading web applications remotely via the Tomcat Manager application.
 
-**Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html](https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html)
+The Tomcat Manager application provides an HTTP text protocol API for deploying, undeploying, starting, stopping, and reloading web applications remotely. Key endpoints include: /manager/text/list (list deployed apps), /manager/text/deploy (deploy a WAR file), /manager/text/undeploy, /manager/text/start, /manager/text/stop, /manager/text/reload, /manager/text/sessions (session statistics), and /manager/text/serverinfo. Requires manager-script role authentication.
 
-#### Tags:
+- **Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html](https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html)
 
- - Administration, Deployment, Management, REST
+#### Tags
+
+- Administration
+- Deployment
+- Management
+- REST
 
 #### Properties
 
 - [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html)
+- [Postman Collection](collections/apache-tomcat.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/apache-tomcat.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Apache Tomcat JMX API
-JMX management and monitoring beans for Connectors, Engines, Hosts, Contexts, Sessions, DataSources, and thread pools.
 
-**Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html](https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html)
+The Tomcat JMX API exposes management and monitoring beans for Connectors, Engines, Hosts, Contexts, Sessions, DataSources, thread pools, and memory via Java Management Extensions. JMX can be accessed via JConsole, Java VisualVM, or remote JMX clients. Prometheus JMX Exporter can expose Tomcat metrics in Prometheus format via HTTP endpoint.
 
-#### Tags:
+- **Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html](https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html)
 
- - JMX, Monitoring, Management, Java
+#### Tags
+
+- JMX
+- Monitoring
+- Management
+- Java
 
 #### Properties
 
 - [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html)
+- [Postman Collection](collections/apache-tomcat.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/apache-tomcat.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
-- [GitHubRepository](https://github.com/apache/tomcat)
+- [GitHub Repository](https://github.com/apache/tomcat)
 - [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/)
 - [Portal](https://tomcat.apache.org/)
-- [GettingStarted](https://tomcat.apache.org/tomcat-10.1-doc/setup.html)
-- [ReleaseNotes](https://tomcat.apache.org/tomcat-10.1-doc/changelog.html)
+- [Getting Started](https://tomcat.apache.org/tomcat-10.1-doc/setup.html)
+- [Release Notes](https://tomcat.apache.org/tomcat-10.1-doc/changelog.html)
 - [Support](https://tomcat.apache.org/lists.html)
-- [TermsOfService](https://www.apache.org/licenses/)
-
-## Features
-
-| Name | Description |
-|------|-------------|
-| Servlet Container | Jakarta Servlet 6.0 compliant servlet container. |
-| JSP Engine | JavaServer Pages compiler and runtime engine. |
-| WebSocket Support | Jakarta WebSocket 2.1 for full-duplex browser-server communication. |
-| HTTP/2 Support | HTTP/2 multiplexing and server push via APR/Native connector. |
-| SSL/TLS Termination | Built-in SSL/TLS support via JSSE or APR/OpenSSL connectors. |
-| Connection Pooling | DBCP2-based database connection pool management via JNDI DataSource. |
-| Clustering | Session replication across Tomcat cluster nodes. |
-
-## Use Cases
-
-| Name | Description |
-|------|-------------|
-| Java Web Application Hosting | Deploy and host Java Servlet/JSP web applications. |
-| API Gateway Backend | Host REST API backends built with Spring MVC or JAX-RS. |
-| Microservices Container | Embedded Tomcat in Spring Boot for microservices deployment. |
-| Legacy Application Migration | Host Java EE applications during cloud migration. |
-
-## Integrations
-
-| Name | Description |
-|------|-------------|
-| Spring Boot | Embedded Tomcat as the default servlet container in Spring Boot. |
-| Apache HTTP Server | mod_jk and mod_proxy_ajp for load balancing between Apache httpd and Tomcat. |
-| Nginx | Nginx reverse proxy for Tomcat with SSL termination and load balancing. |
-| Prometheus | JMX Exporter for exposing Tomcat metrics in Prometheus format. |
-| Docker | Official Docker image for containerized Tomcat deployment. |
+- [Terms of Service](https://www.apache.org/licenses/)
+- [Features](undefined)
+- [Use Cases](undefined)
+- [Integrations](undefined)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** info@apievangelist.com
