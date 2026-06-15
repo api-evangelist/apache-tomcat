@@ -1,0 +1,390 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Tomcat Manager Text API",
+    "version": "10.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List currently deployed applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/list"
+          },
+          "docs": "List currently deployed applications"
+        },
+        {
+          "info": {
+            "name": "Deploy application from a local path or appBase",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/deploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path (with leading slash)"
+              },
+              {
+                "name": "war",
+                "value": "",
+                "type": "query",
+                "description": "URL of a WAR or directory on the server, or filename in appBase"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query",
+                "description": "URL of a context configuration XML"
+              },
+              {
+                "name": "update",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deploy application from a local path or appBase"
+        },
+        {
+          "info": {
+            "name": "Upload and deploy a WAR via HTTP PUT",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{host}:{port}/manager/text/deploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "update",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Upload and deploy a WAR via HTTP PUT"
+        },
+        {
+          "info": {
+            "name": "Undeploy an application (deletes WAR and docBase)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/undeploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Undeploy an application (deletes WAR and docBase)"
+        },
+        {
+          "info": {
+            "name": "Reload an existing application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/reload",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Reload an existing application"
+        },
+        {
+          "info": {
+            "name": "Start a stopped application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/start",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Start a stopped application"
+        },
+        {
+          "info": {
+            "name": "Stop a running application (no undeploy)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/stop",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Stop a running application (no undeploy)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Display session statistics for an application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sessions",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Display session statistics for an application"
+        },
+        {
+          "info": {
+            "name": "Expire idle sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/expire",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              },
+              {
+                "name": "idle",
+                "value": "",
+                "type": "query",
+                "description": "Minutes of inactivity; 0 expires all sessions"
+              }
+            ]
+          },
+          "docs": "Expire idle sessions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "server",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Display Tomcat, OS, and JVM information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/serverinfo"
+          },
+          "docs": "Display Tomcat, OS, and JVM information"
+        },
+        {
+          "info": {
+            "name": "List global JNDI resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/resources",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Fully qualified Java class name to filter by"
+              }
+            ]
+          },
+          "docs": "List global JNDI resources"
+        },
+        {
+          "info": {
+            "name": "Identify web applications with classloader memory leaks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/findleaks",
+            "params": [
+              {
+                "name": "statusLine",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Identify web applications with classloader memory leaks"
+        },
+        {
+          "info": {
+            "name": "List SSL/TLS ciphers per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorCiphers"
+          },
+          "docs": "List SSL/TLS ciphers per connector"
+        },
+        {
+          "info": {
+            "name": "List SSL/TLS certificate chains per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorCerts"
+          },
+          "docs": "List SSL/TLS certificate chains per connector"
+        },
+        {
+          "info": {
+            "name": "List trusted certificates per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorTrustedCerts"
+          },
+          "docs": "List trusted certificates per connector"
+        },
+        {
+          "info": {
+            "name": "Reload TLS configuration without restarting",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslReload",
+            "params": [
+              {
+                "name": "tlsHostName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Reload TLS configuration without restarting"
+        },
+        {
+          "info": {
+            "name": "Capture a JVM thread dump",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/threaddump"
+          },
+          "docs": "Capture a JVM thread dump"
+        },
+        {
+          "info": {
+            "name": "Display JVM diagnostic information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/vminfo"
+          },
+          "docs": "Display JVM diagnostic information"
+        },
+        {
+          "info": {
+            "name": "Persist server or per-context configuration to disk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/save",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Persist server or per-context configuration to disk"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
