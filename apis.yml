@@ -59,6 +59,12 @@ apis:
       - type: Documentation
         url: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/apache-tomcat-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/apache-tomcat-domain-security.yml
+  - type: Authentication
+    url: authentication/apache-tomcat-authentication.yml
   - type: GitHubRepository
     url: https://github.com/apache/tomcat
   - type: Documentation

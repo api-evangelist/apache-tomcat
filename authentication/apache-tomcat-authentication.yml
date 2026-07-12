@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/apache-tomcat-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication; user must hold the `manager-script` role
+  sources:
+  - openapi/apache-tomcat-openapi.yml
