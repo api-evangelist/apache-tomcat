@@ -59,6 +59,8 @@ apis:
       - type: Documentation
         url: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/apache-tomcat-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/apache-tomcat-vulnerability-disclosure.yml
   - type: DomainSecurity
