@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Apache Tomcat Manager Text applications sessions API
+  description: The Apache Tomcat Manager web application exposes a text-based HTTP API for deploying, undeploying, listing, starting, stopping, and inspecting web applications running inside a Tomcat server. All commands require HTTP Basic authentication by a user holding the `manager-script` role. Responses are plain text where the first line begins with `OK -` on success or `FAIL -` on error.
+  version: '10.1'
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Apache Tomcat
+    url: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+servers:
+- url: http://{host}:{port}/manager/text
+  description: Tomcat Manager text endpoint
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '8080'
+security:
+- basicAuth: []
+tags:
+- name: sessions
+  description: Inspect and expire HTTP sessions
+paths:
+  /sessions:
+    get:
+      tags:
+      - sessions
+      summary: Display session statistics for an application
+      operationId: sessionStats
+      parameters:
+      - $ref: '#/components/parameters/PathRequired'
+      responses:
+        '200':
+          description: Plain-text session statistics
+          content:
+            text/plain: {}
+  /expire:
+    get:
+      tags:
+      - sessions
+      summary: Expire idle sessions
+      operationId: expireSessions
+      parameters:
+      - $ref: '#/components/parameters/PathRequired'
+      - name: idle
+        in: query
+        required: true
+        schema:
+          type: integer
+          minimum: 0
+        description: Minutes of inactivity; 0 expires all sessions
+      responses:
+        '200':
+          description: Plain-text result
+          content:
+            text/plain: {}
+components:
+  parameters:
+    PathRequired:
+      name: path
+      in: query
+      required: true
+      schema:
+        type: string
+      description: Context path of the target application (with leading slash)
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication; user must hold the `manager-script` role

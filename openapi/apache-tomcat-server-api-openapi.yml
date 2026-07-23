@@ -1,0 +1,162 @@
+openapi: 3.1.0
+info:
+  title: Apache Tomcat Manager Text applications server API
+  description: The Apache Tomcat Manager web application exposes a text-based HTTP API for deploying, undeploying, listing, starting, stopping, and inspecting web applications running inside a Tomcat server. All commands require HTTP Basic authentication by a user holding the `manager-script` role. Responses are plain text where the first line begins with `OK -` on success or `FAIL -` on error.
+  version: '10.1'
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Apache Tomcat
+    url: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+servers:
+- url: http://{host}:{port}/manager/text
+  description: Tomcat Manager text endpoint
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '8080'
+security:
+- basicAuth: []
+tags:
+- name: server
+  description: Server, JVM, and SSL/TLS information
+paths:
+  /serverinfo:
+    get:
+      tags:
+      - server
+      summary: Display Tomcat, OS, and JVM information
+      operationId: serverInfo
+      responses:
+        '200':
+          description: Plain-text server info
+          content:
+            text/plain: {}
+  /resources:
+    get:
+      tags:
+      - server
+      summary: List global JNDI resources
+      operationId: listResources
+      parameters:
+      - name: type
+        in: query
+        schema:
+          type: string
+        description: Fully qualified Java class name to filter by
+      responses:
+        '200':
+          description: Plain-text JNDI listing
+          content:
+            text/plain: {}
+  /findleaks:
+    get:
+      tags:
+      - server
+      summary: Identify web applications with classloader memory leaks
+      operationId: findLeaks
+      parameters:
+      - name: statusLine
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Plain-text leak report
+          content:
+            text/plain: {}
+  /sslConnectorCiphers:
+    get:
+      tags:
+      - server
+      summary: List SSL/TLS ciphers per connector
+      operationId: sslConnectorCiphers
+      responses:
+        '200':
+          description: Plain-text cipher list
+          content:
+            text/plain: {}
+  /sslConnectorCerts:
+    get:
+      tags:
+      - server
+      summary: List SSL/TLS certificate chains per connector
+      operationId: sslConnectorCerts
+      responses:
+        '200':
+          description: Plain-text certificate listing
+          content:
+            text/plain: {}
+  /sslConnectorTrustedCerts:
+    get:
+      tags:
+      - server
+      summary: List trusted certificates per connector
+      operationId: sslConnectorTrustedCerts
+      responses:
+        '200':
+          description: Plain-text trusted certs
+          content:
+            text/plain: {}
+  /sslReload:
+    get:
+      tags:
+      - server
+      summary: Reload TLS configuration without restarting
+      operationId: sslReload
+      parameters:
+      - name: tlsHostName
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Plain-text reload result
+          content:
+            text/plain: {}
+  /threaddump:
+    get:
+      tags:
+      - server
+      summary: Capture a JVM thread dump
+      operationId: threadDump
+      responses:
+        '200':
+          description: Plain-text thread dump
+          content:
+            text/plain: {}
+  /vminfo:
+    get:
+      tags:
+      - server
+      summary: Display JVM diagnostic information
+      operationId: vmInfo
+      responses:
+        '200':
+          description: Plain-text VM info
+          content:
+            text/plain: {}
+  /save:
+    get:
+      tags:
+      - server
+      summary: Persist server or per-context configuration to disk
+      operationId: saveConfig
+      parameters:
+      - name: path
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Plain-text save result
+          content:
+            text/plain: {}
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication; user must hold the `manager-script` role
