@@ -8,6 +8,19 @@ description: >-
   for configuration management. It is maintained by the Apache Software Foundation and is one of
   the most widely deployed Java application servers.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
 image: https://tomcat.apache.org/res/images/tomcat.png
@@ -24,40 +37,66 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/apache-tomcat/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: apache-tomcat:apache-tomcat-manager-api
-    name: Apache Tomcat Manager API
-    description: >-
-      The Tomcat Manager application provides an HTTP text protocol API for deploying, undeploying,
-      starting, stopping, and reloading web applications remotely. Key endpoints include:
-      /manager/text/list (list deployed apps), /manager/text/deploy (deploy a WAR file),
-      /manager/text/undeploy, /manager/text/start, /manager/text/stop, /manager/text/reload,
-      /manager/text/sessions (session statistics), and /manager/text/serverinfo. Requires
-      manager-script role authentication.
-    humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
-    tags:
-      - Administration
-      - Deployment
-      - Management
-      - REST
-    properties:
-      - type: Documentation
-        url: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
-  - aid: apache-tomcat:apache-tomcat-jmx-api
-    name: Apache Tomcat JMX API
-    description: >-
-      The Tomcat JMX API exposes management and monitoring beans for Connectors, Engines, Hosts,
-      Contexts, Sessions, DataSources, thread pools, and memory via Java Management Extensions.
-      JMX can be accessed via JConsole, Java VisualVM, or remote JMX clients. Prometheus JMX
-      Exporter can expose Tomcat metrics in Prometheus format via HTTP endpoint.
-    humanURL: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
-    tags:
-      - JMX
-      - Monitoring
-      - Management
-      - Java
-    properties:
-      - type: Documentation
-        url: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
+- aid: apache-tomcat:apache-tomcat-manager-api
+  name: Apache Tomcat Manager API
+  description: >-
+    The Tomcat Manager application provides an HTTP text protocol API for deploying, undeploying, starting,
+    stopping, and reloading web applications remotely. Key endpoints include: /manager/text/list (list
+    deployed apps), /manager/text/deploy (deploy a WAR file), /manager/text/undeploy, /manager/text/start,
+    /manager/text/stop, /manager/text/reload, /manager/text/sessions (session statistics), and /manager/text/serverinfo.
+    Requires manager-script role authentication.
+  humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+  tags:
+  - Administration
+  - Deployment
+  - Management
+  - REST
+  properties:
+  - type: Documentation
+    url: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+- aid: apache-tomcat:apache-tomcat-jmx-api
+  name: Apache Tomcat JMX API
+  description: >-
+    The Tomcat JMX API exposes management and monitoring beans for Connectors, Engines, Hosts, Contexts,
+    Sessions, DataSources, thread pools, and memory via Java Management Extensions. JMX can be accessed
+    via JConsole, Java VisualVM, or remote JMX clients. Prometheus JMX Exporter can expose Tomcat metrics
+    in Prometheus format via HTTP endpoint.
+  humanURL: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
+  tags:
+  - JMX
+  - Monitoring
+  - Management
+  - Java
+  properties:
+  - type: Documentation
+    url: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
+- aid: apache-tomcat:apache-tomcat-applications-api
+  name: Apache Tomcat applications API
+  description: Manage deployed web applications
+  humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+  tags:
+  - applications
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-tomcat-applications-api-openapi.yml
+- aid: apache-tomcat:apache-tomcat-server-api
+  name: Apache Tomcat server API
+  description: Server, JVM, and SSL/TLS information
+  humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+  tags:
+  - server
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-tomcat-server-api-openapi.yml
+- aid: apache-tomcat:apache-tomcat-sessions-api
+  name: Apache Tomcat sessions API
+  description: Inspect and expire HTTP sessions
+  humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
+  tags:
+  - sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-tomcat-sessions-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/apache-tomcat-agentic-access.yml
