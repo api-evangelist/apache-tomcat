@@ -1,0 +1,18 @@
+{
+  "provider": "apache-tomcat",
+  "sources": [
+    "apache-tomcat-applications-api-openapi.yml",
+    "apache-tomcat-server-api-openapi.yml",
+    "apache-tomcat-sessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-tomcat-applications-api-openapi.yml",
+    "apache-tomcat-server-api-openapi.yml",
+    "apache-tomcat-sessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
