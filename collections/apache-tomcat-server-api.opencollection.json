@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Tomcat Manager Text applications server API",
+    "version": "10.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "server",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Display Tomcat, OS, and JVM information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/serverinfo"
+          },
+          "docs": "Display Tomcat, OS, and JVM information"
+        },
+        {
+          "info": {
+            "name": "List global JNDI resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/resources",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Fully qualified Java class name to filter by"
+              }
+            ]
+          },
+          "docs": "List global JNDI resources"
+        },
+        {
+          "info": {
+            "name": "Identify web applications with classloader memory leaks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/findleaks",
+            "params": [
+              {
+                "name": "statusLine",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Identify web applications with classloader memory leaks"
+        },
+        {
+          "info": {
+            "name": "List SSL/TLS ciphers per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorCiphers"
+          },
+          "docs": "List SSL/TLS ciphers per connector"
+        },
+        {
+          "info": {
+            "name": "List SSL/TLS certificate chains per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorCerts"
+          },
+          "docs": "List SSL/TLS certificate chains per connector"
+        },
+        {
+          "info": {
+            "name": "List trusted certificates per connector",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslConnectorTrustedCerts"
+          },
+          "docs": "List trusted certificates per connector"
+        },
+        {
+          "info": {
+            "name": "Reload TLS configuration without restarting",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sslReload",
+            "params": [
+              {
+                "name": "tlsHostName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Reload TLS configuration without restarting"
+        },
+        {
+          "info": {
+            "name": "Capture a JVM thread dump",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/threaddump"
+          },
+          "docs": "Capture a JVM thread dump"
+        },
+        {
+          "info": {
+            "name": "Display JVM diagnostic information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/vminfo"
+          },
+          "docs": "Display JVM diagnostic information"
+        },
+        {
+          "info": {
+            "name": "Persist server or per-context configuration to disk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/save",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Persist server or per-context configuration to disk"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

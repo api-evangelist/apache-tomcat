@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Tomcat Manager Text applications sessions API",
+    "version": "10.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Display session statistics for an application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/sessions",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Display session statistics for an application"
+        },
+        {
+          "info": {
+            "name": "Expire idle sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/expire",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              },
+              {
+                "name": "idle",
+                "value": "",
+                "type": "query",
+                "description": "Minutes of inactivity; 0 expires all sessions"
+              }
+            ]
+          },
+          "docs": "Expire idle sessions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

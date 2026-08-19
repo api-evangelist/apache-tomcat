@@ -1,0 +1,191 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Tomcat Manager Text applications API",
+    "version": "10.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List currently deployed applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/list"
+          },
+          "docs": "List currently deployed applications"
+        },
+        {
+          "info": {
+            "name": "Deploy application from a local path or appBase",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/deploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path (with leading slash)"
+              },
+              {
+                "name": "war",
+                "value": "",
+                "type": "query",
+                "description": "URL of a WAR or directory on the server, or filename in appBase"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query",
+                "description": "URL of a context configuration XML"
+              },
+              {
+                "name": "update",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deploy application from a local path or appBase"
+        },
+        {
+          "info": {
+            "name": "Upload and deploy a WAR via HTTP PUT",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{host}:{port}/manager/text/deploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "update",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Upload and deploy a WAR via HTTP PUT"
+        },
+        {
+          "info": {
+            "name": "Undeploy an application (deletes WAR and docBase)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/undeploy",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Undeploy an application (deletes WAR and docBase)"
+        },
+        {
+          "info": {
+            "name": "Reload an existing application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/reload",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Reload an existing application"
+        },
+        {
+          "info": {
+            "name": "Start a stopped application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/start",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Start a stopped application"
+        },
+        {
+          "info": {
+            "name": "Stop a running application (no undeploy)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}:{port}/manager/text/stop",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "Context path of the target application (with leading slash)"
+              }
+            ]
+          },
+          "docs": "Stop a running application (no undeploy)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
