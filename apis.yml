@@ -28,6 +28,13 @@ tags:
   - Application Server
   - Java
   - JSP
+  - Open-Source
+  - Servlet
+  - Web Server
+tags_raw:
+  - Application Server
+  - Java
+  - JSP
   - Open Source
   - Servlet
   - Web Server
@@ -75,6 +82,8 @@ apis:
   description: Manage deployed web applications
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
+  - Application
+  tags_raw:
   - applications
   properties:
   - type: OpenAPI
@@ -84,6 +93,8 @@ apis:
   description: Server, JVM, and SSL/TLS information
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
+  - Server
+  tags_raw:
   - server
   properties:
   - type: OpenAPI
@@ -93,6 +104,8 @@ apis:
   description: Inspect and expire HTTP sessions
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
+  - Sessions
+  tags_raw:
   - sessions
   properties:
   - type: OpenAPI
