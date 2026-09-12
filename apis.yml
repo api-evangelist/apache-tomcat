@@ -126,6 +126,8 @@ apis:
   - type: OpenAPI
     url: openapi/apache-tomcat-sessions-api-openapi.yml
 common:
+  - type: Website
+    url: https://www.apache.org/
   - type: SecurityPolicy
     url: https://github.com/apache/tomcat/blob/main/SECURITY.md
   - type: CodeOfConduct
