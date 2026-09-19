@@ -108,7 +108,7 @@ apis:
   description: Server, JVM, and SSL/TLS information
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
-  - Server
+  - Servers
   tags_raw:
   - server
   properties:
