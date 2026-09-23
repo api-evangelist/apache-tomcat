@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Apache Tomcat Manager Text applications API
+  title: Apache Tomcat Manager Text Applications API
   description: The Apache Tomcat Manager web application exposes a text-based HTTP API for deploying, undeploying, listing, starting, stopping, and inspecting web applications running inside a Tomcat server. All commands require HTTP Basic authentication by a user holding the `manager-script` role. Responses are plain text where the first line begins with `OK -` on success or `FAIL -` on error.
   version: '10.1'
   license:
@@ -20,13 +20,13 @@ servers:
 security:
 - basicAuth: []
 tags:
-- name: applications
+- name: Applications
   description: Manage deployed web applications
 paths:
   /list:
     get:
       tags:
-      - applications
+      - Applications
       summary: List currently deployed applications
       operationId: listApplications
       responses:
@@ -37,7 +37,7 @@ paths:
   /deploy:
     get:
       tags:
-      - applications
+      - Applications
       summary: Deploy application from a local path or appBase
       operationId: deployLocal
       parameters:
@@ -75,7 +75,7 @@ paths:
             text/plain: {}
     put:
       tags:
-      - applications
+      - Applications
       summary: Upload and deploy a WAR via HTTP PUT
       operationId: deployUpload
       parameters:
@@ -111,7 +111,7 @@ paths:
   /undeploy:
     get:
       tags:
-      - applications
+      - Applications
       summary: Undeploy an application (deletes WAR and docBase)
       operationId: undeployApplication
       parameters:
@@ -124,7 +124,7 @@ paths:
   /reload:
     get:
       tags:
-      - applications
+      - Applications
       summary: Reload an existing application
       operationId: reloadApplication
       parameters:
@@ -137,7 +137,7 @@ paths:
   /start:
     get:
       tags:
-      - applications
+      - Applications
       summary: Start a stopped application
       operationId: startApplication
       parameters:
@@ -150,7 +150,7 @@ paths:
   /stop:
     get:
       tags:
-      - applications
+      - Applications
       summary: Stop a running application (no undeploy)
       operationId: stopApplication
       parameters:

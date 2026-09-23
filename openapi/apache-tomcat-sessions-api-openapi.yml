@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Apache Tomcat Manager Text applications sessions API
+  title: Apache Tomcat Manager Text Sessions API
   description: The Apache Tomcat Manager web application exposes a text-based HTTP API for deploying, undeploying, listing, starting, stopping, and inspecting web applications running inside a Tomcat server. All commands require HTTP Basic authentication by a user holding the `manager-script` role. Responses are plain text where the first line begins with `OK -` on success or `FAIL -` on error.
   version: '10.1'
   license:
@@ -20,13 +20,13 @@ servers:
 security:
 - basicAuth: []
 tags:
-- name: sessions
+- name: Sessions
   description: Inspect and expire HTTP sessions
 paths:
   /sessions:
     get:
       tags:
-      - sessions
+      - Sessions
       summary: Display session statistics for an application
       operationId: sessionStats
       parameters:
@@ -39,7 +39,7 @@ paths:
   /expire:
     get:
       tags:
-      - sessions
+      - Sessions
       summary: Expire idle sessions
       operationId: expireSessions
       parameters:
