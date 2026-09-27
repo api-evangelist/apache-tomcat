@@ -43,7 +43,7 @@ tags:
   - Application Server
   - Java
   - JSP
-  - Open-Source
+  - Open Source
   - Servlet
   - Web Server
 tags_raw:
@@ -53,6 +53,7 @@ tags_raw:
   - Open Source
   - Servlet
   - Web Server
+  - Open-Source
 created: '2024-01-15'
 modified: '2026-04-19'
 url: >-
@@ -93,7 +94,7 @@ apis:
   - type: Documentation
     url: https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html
 - aid: apache-tomcat:apache-tomcat-applications-api
-  name: Apache Tomcat applications API
+  name: Apache Tomcat Applications API
   description: Manage deployed web applications
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
@@ -104,7 +105,7 @@ apis:
   - type: OpenAPI
     url: openapi/apache-tomcat-applications-api-openapi.yml
 - aid: apache-tomcat:apache-tomcat-server-api
-  name: Apache Tomcat server API
+  name: Apache Tomcat Server API
   description: Server, JVM, and SSL/TLS information
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
@@ -115,7 +116,7 @@ apis:
   - type: OpenAPI
     url: openapi/apache-tomcat-server-api-openapi.yml
 - aid: apache-tomcat:apache-tomcat-sessions-api
-  name: Apache Tomcat sessions API
+  name: Apache Tomcat Sessions API
   description: Inspect and expire HTTP sessions
   humanURL: https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html
   tags:
