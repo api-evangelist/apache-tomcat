@@ -1,24 +1,19 @@
 {
   "provider": "apache-tomcat",
   "sources": [
-    "_original/apache-tomcat-openapi.yml"
+    "_original/apache-tomcat-openapi.json"
   ],
   "outputs": [
-    "apache-tomcat-applications-api-openapi.yml",
-    "apache-tomcat-server-api-openapi.yml",
-    "apache-tomcat-sessions-api-openapi.yml"
+    "apache-tomcat-queues-api-openapi.yml",
+    "apache-tomcat-status-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "apache-tomcat-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "apache-tomcat-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 4 total)"
   ],
-  "skipped": [
-    "apache-tomcat-applications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-tomcat-server-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-tomcat-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
