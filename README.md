@@ -1,4 +1,4 @@
-# Apache Tomcat (apache-tomcat)
+# Apache Tomcat
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,124 @@
 
 Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages (JSP), Java Expression Language, and Java WebSocket technologies. It provides a pure Java HTTP web server and servlet container for hosting Java web applications. Tomcat exposes management APIs via the Manager application (HTTP text protocol), JMX for monitoring, and a Virtual Host Manager for configuration management. It is maintained by the Apache Software Foundation and is one of the most widely deployed Java application servers.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-tomcat/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-tomcat/refs/heads/main/apis.yml)
+**Areas:** Application Server · Java · JSP · Open Source · Servlet · Web Server
 
-## Scope
+## Apache Tomcat on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Apache Tomcat is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-tomcat/](https://apis.io/providers/apache-tomcat/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Application Server
-- Java
-- JSP
-- Open Source
-- Servlet
-- Web Server
+- [Apache Tomcat Manager API](https://apis.io/apis/apache-tomcat/apache-tomcat-manager-api/) — The Tomcat Manager application provides an HTTP text protocol API for deploying, undeploying, starting, stopping, and reloading web applications remotely.…
+- [Apache Tomcat JMX API](https://apis.io/apis/apache-tomcat/apache-tomcat-jmx-api/) — The Tomcat JMX API exposes management and monitoring beans for Connectors, Engines, Hosts, Contexts, Sessions, DataSources, thread pools, and memory via…
+- [Apache Tomcat Applications API](https://apis.io/apis/apache-tomcat/apache-tomcat-applications-api/) — Manage deployed web applications
+- [Apache Tomcat Server API](https://apis.io/apis/apache-tomcat/apache-tomcat-server-api/) — Server, JVM, and SSL/TLS information
+- [Apache Tomcat Sessions API](https://apis.io/apis/apache-tomcat/apache-tomcat-sessions-api/) — Inspect and expire HTTP sessions
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-04-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Apache Tomcat Manager API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Tomcat Manager application provides an HTTP text protocol API for deploying, undeploying, starting, stopping, and reloading web applications remotely. Key endpoints include: /manager/text/list (list deployed apps), /manager/text/deploy (deploy a WAR file), /manager/text/undeploy, /manager/text/start, /manager/text/stop, /manager/text/reload, /manager/text/sessions (session statistics), and /manager/text/serverinfo. Requires manager-script role authentication.
+- [Apache Tomcat Agentic Access](https://apis.io/agentic-access/apache-tomcat/apache-tomcat-agentic-access/)
 
-- **Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html](https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html)
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Administration
-- Deployment
-- Management
-- REST
+- [Apache Tomcat Manager Text API](https://apis.io/collections/apache-tomcat/open-apache-tomcat/)
+- [Apache Tomcat Manager Text applications API](https://apis.io/collections/apache-tomcat/open-apache-tomcat-applications-api/)
+- [Apache Tomcat Manager Text applications server API](https://apis.io/collections/apache-tomcat/open-apache-tomcat-server-api/)
+- [Apache Tomcat Manager Text applications sessions API](https://apis.io/collections/apache-tomcat/open-apache-tomcat-sessions-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/manager-howto.html)
-- [Postman Collection](collections/apache-tomcat.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-tomcat.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Apache Tomcat JMX API
+- [Apache Tomcat Authentication](https://apis.io/security/apache-tomcat/apache-tomcat-authentication/)
+- [Apache Tomcat Domain Security](https://apis.io/security/apache-tomcat/apache-tomcat-domain-security/)
+- [Apache Tomcat Vulnerability Disclosure](https://apis.io/security/apache-tomcat/apache-tomcat-vulnerability-disclosure/)
 
-The Tomcat JMX API exposes management and monitoring beans for Connectors, Engines, Hosts, Contexts, Sessions, DataSources, thread pools, and memory via Java Management Extensions. JMX can be accessed via JConsole, Java VisualVM, or remote JMX clients. Prometheus JMX Exporter can expose Tomcat metrics in Prometheus format via HTTP endpoint.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html](https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html)
+Published plans, tiers and prices.
 
-#### Tags
+- [Apache Tomcat Plans Pricing](https://apis.io/plans/apache-tomcat/apache-tomcat-plans-pricing/)
 
-- JMX
-- Monitoring
-- Management
-- Java
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/monitoring.html)
-- [Postman Collection](collections/apache-tomcat.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-tomcat.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Apache Tomcat Rate Limits](https://apis.io/rate-limits/apache-tomcat/apache-tomcat-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHub Repository](https://github.com/apache/tomcat)
+What the API costs to run, by operation.
+
+- [Apache Tomcat Finops](https://apis.io/finops/apache-tomcat/apache-tomcat-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://tomcat.apache.org/tomcat-10.1-doc/)
-- [Portal](https://tomcat.apache.org/)
-- [Getting Started](https://tomcat.apache.org/tomcat-10.1-doc/setup.html)
-- [Release Notes](https://tomcat.apache.org/tomcat-10.1-doc/changelog.html)
+- [Getting started](https://tomcat.apache.org/tomcat-10.1-doc/setup.html)
 - [Support](https://tomcat.apache.org/lists.html)
-- [Terms of Service](https://www.apache.org/licenses/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://www.apache.org/licenses/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 38.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 42.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 18.4 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-tomcat/](https://apis.io/providers/apache-tomcat/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Tomcat: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-tomcat/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
